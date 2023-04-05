@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin:40px auto;
+        }
+
+        .item{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 40px auto;
+        }
+
+        ul{
+            display: flex;
+            justify-content: center;
+            padding:0;
+            margin:0;
+        }
+        li{
+            padding:0;
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: turquoise;
+            border-radius: 50%;
+            list-style:none
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    
+    <div class="box"></div>
+
+<!-- item item1 클래스를 두가지 가지는 것 -->
+    <div class="item item1"></div>
+    <div class="item item2"></div>
+    <div class="item item3"></div>
+    <div class="item item4"></div>
+    <div class="item item5"></div>
+
+
+<script src="js/jquery-3.6.4.min.js"></script>
+<script>
+$('.box').click(function(){
+    $('.box').css({'backgroundColor':'red'});
+});
+
+//$() 제이쿼리 함수
+/*
+이것으로 선택자를 감싸줘야지만
+제이쿼리의 함수들을 사용할 수 있습니다. 
+*/
+
+$('.item1').css({'backgroundColor' : 'gold'});
+//.item2에게 백그라운드색 오렌지 주기
+
+$('.item2').css({
+    'backgroundColor':'orange',
+    'border':'4px solid #000'
+});
+
+/*
+.item3은 백그라운드 색상 orangered,
+보더 굵기 7px
+*/
+
+$('.item3').css({
+    'backgroundColor' : 'orangered',
+    'borderWidth' : 7,
+    'width' : 400
+});
+/*
+item4
+백그라운드색상 red
+보더굵기 10px
+너비 600px
+*/
+
+$('.item4').css({
+    'backgroundColor' : 'red',
+    'borderWidth' : 10,
+    'width' :600    
+})
+
+
+
+$('li').click(function(){
+
+    $(this).css({'backgroundColor' : 'deeppink'})
+    $(this).siblings().css({'backgroundColor' : 'turquoise'})
+
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .top{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            text-align: center;
+            line-height: 200px;
+        }
+        body{
+            height: 10000px;
+        }
+
+        *{
+            margin:0;
+            padding:0;
+        }
+
+
+        section{
+            height: 100vh;
+            /* 
+            vh = viewport height 
+            브라우저의 높이값의 백분률 
+            100vh = 브라우저 높이값 100%
+            50vh = 브라우저 높이값 50% 
+            */
+        }
+
+        .s1{
+            background-color: limegreen;
+        }
+
+        .s2{
+            background-color: dodgerblue;
+        }
+
+        .s3{
+            background-color: darkviolet;
+        }
+
+        .s4{
+            background-color: deeppink;
+        }
+
+        .btn{
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            margin-top: -70px;
+        }
+
+        .btn li{
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <ul class="btn">
+        <li>s1</li>
+        <li>s2</li>
+        <li>s3</li>
+        <li>s4</li>
+    </ul>
+
+    <div class="wrap">
+        <section class="s1">s1</section>
+        <section class="s2">s2</section>
+        <section class="s3">s3</section>
+        <section class="s4">s4</section>
+    </div><!--wrap-->
+    
+
+
+    <div class="top">
+        TOP
+    </div>
+
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script>
+        $('.top').click(function(){
+            $('html,body').animate({'scrollTop':0});
+        });
+
+
+
+
+// $('.btn li').eq(0).click(function(){
+//     let s1 = $('.wrap section').eq(0).offset().top;
+//     $('html,body').animate({'scrollTop':s1});
+// });
+        
+
+// $('.btn li').eq(1).click(function(){
+//     let s2 = $('.wrap section').eq(1).offset().top;
+//     $('html,body').animate({'scrollTop':s2});
+
+// });
+        
+
+// $('.btn li').eq(2).click(function(){
+//     let s3 = $('.wrap section').eq(2).offset().top;
+//     $('html,body').animate({'scrollTop':s3});
+// });
+
+
+// $('.btn li').eq(3).click(function(){
+//     let s4 = $('.wrap section').eq(3).offset().top;
+//     $('html,body').animate({'scrollTop':s4});
+// });
+
+/*
+1. .btn의 첫번째 li를 누르면 스크롤이 제일꼭대기로 감
+2. .btn의 두번째 li를 누르면 스크롤이 s2의 시작지점까지 감 
+3. .btn의 세번째 li를 누르면 스크롤이 s3의 시작지점까지 감 
+4. .btn의 세번째 li를 누르면 스크롤이 s4의 시작지점까지 감 
+
+
+ = btn의 li를 클릭 했을 때
+ 해당 li와 같은 순번의 section이 있는 곳으로
+ 스크롤이 이동한다 
+
+
+ 1. btn li 클릭
+ 2. 클릭한 li의 인덱스넘버 구해서 변수 하나에 저장하기
+ 3. 2번에서 구한 인덱스넘버와 같은 순번의 section의
+   offset - Top 값 구해서 변수 하나에 저장하기
+ 4. 거기까지 스크롤 이동시키기 
+*/
+
+$('.btn li').click(function(){
+
+    let i = $(this).index();
+    let sTop = $('.wrap section').eq(i).offset().top;
+    $('html, body').animate({
+        'scrollTop' : sTop
+    });
+
+});
+
+
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;}
+        a{text-decoration: none; color: inherit;}
+        ul{list-style: none;}
+
+        .wrap{}
+        .wrap section{
+            height: 1000px;
+            text-align: center;
+            line-height: 1000px;
+            font-size: 120px;
+            font-family: arial;
+            font-weight: 900;
+        }
+
+        .red{background: red;}
+        .orangered{background: orangered;}
+        .orange{background: orange;}
+        .gold{background: gold;}
+        .yellow{background: yellow;}
+
+
+        ul{
+            position: fixed;
+            right: 20px;
+            width: 150px;
+            text-align: right;            
+            top: 50%;
+            margin-top: -100px;
+        }
+
+        ul li{
+            font-size: 22px;
+            font-family: impact;
+            margin-bottom: 10px;
+        }
+/* 윈도키 + ; */
+        ul li:after{
+            content: '😶';
+            margin-left: 5px;
+        }
+
+        ul li.active{
+            background-color: #000;
+            color: #fff;
+        }
+
+        ul li.active:after{
+            content: '🤑';
+        }
+
+    </style>
+</head>
+<body>
+    
+    <ul>
+        <li class="active">RED</li>
+        <li>ORANGERED</li>
+        <li>ORANGE</li>
+        <li>GOLD</li>
+        <li>YELLOW</li>
+    </ul>
+
+    <div class="wrap">
+        <section class="red">RED</section>
+        <section class="orangered">ORANGERED</section>
+        <section class="orange">ORANGE</section>
+        <section class="gold">GOLD</section>
+        <section class="yellow">YELLOW</section>
+    </div><!--wrap-->
+
+
+
+<script src="js/jquery-3.6.4.min.js"></script>
+<script src="js/mouseWheel/jquery.mousewheel.min.js"></script> 
+<script>
+
+    $('section').on('mousewheel',function(e,d){
+
+        if(d>0){
+
+            let prv = $(this).prev().offset().top;
+            $('html,body').stop().animate({
+                'scrollTop' : prv
+            });
+
+        }else if(d<0){
+            let nxt = $(this).next().offset().top;
+            $('html,body').stop().animate({
+                'scrollTop' : nxt
+            });
+        }
+
+    });
+/*
+section에서 마우스 휠을 올리면,
+이전섹션까지 scrollTop이 animate,
+
+마우스 휠을 내리면
+다음섹션까지 scrollTop이 animate 됩니다
+
+
+*/
+
+
+
+
+
+
+
+
+    $(window).on('scroll',function(){
+        
+        let scr = $(window).scrollTop();
+        
+        if(scr >= 0 && scr < 1000){
+            $('ul li').eq(0).addClass('active')
+            .siblings().removeClass('active');
+        }else if(scr < 2000){
+            $('ul li').eq(1).addClass('active')
+            .siblings().removeClass('active');
+        }else if(scr < 3000){
+            $('ul li').eq(2).addClass('active')
+            .siblings().removeClass('active');
+        }else if(scr < 4000){
+            $('ul li').eq(3).addClass('active')
+            .siblings().removeClass('active');
+        }else{
+            $('ul li').eq(4).addClass('active')
+            .siblings().removeClass('active');
+        }
+
+
+
+    });
+
+
+/*
+  1. window에 스크롤이벤트가 일어날때
+  2. 스크롤의 위치값을 실시간으로 구하고,
+  3. 해당 스크롤의 위치가 0~1000사이 일때는 첫번째 li가,
+  4. 해당 스크롤의 위치가 1000~2000사이 일때는 두번째 li가,
+  5. 해당 스크롤의 위치가 2000~3000사이 일때는 세번째 li가,
+  6. 해당 스크롤의 위치가 3000~4000사이 일때는 네번째 li가,
+  7. 해당 스크롤의 위치가 4000~5000사이 일때는 다섯번째 li가,
+  8. class active를 가지게 됩니다. 
+      addClass('active');
+*/
+
+
+/*
+ui5.scrollContrl.html
+방금 한거 그대로 만들어보세용 
+
+*/
+
+
+
+
+$('ul li').click(function(){
+    let i = $(this).index();
+    let sTop = $('section').eq(i).offset().top;
+    $('html, body').animate({'scrollTop' : sTop});
+});
+
+    </script>
+
+
+</body>
+</html>

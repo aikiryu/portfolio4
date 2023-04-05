@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .output{
+            height: 120px;
+            line-height: 120px;
+            font-size: 42px;
+            background-color: #000;
+            color: lawngreen;
+            border: 5px inset #ccc;
+            padding: 20px;
+            width: 350px;
+            margin: 40px auto;
+        }
+
+        .btnSet{}
+        .btnSet button{
+            width: 350px;
+            text-align: center;
+            height: 120px;
+            border: 10px outset #ccc;
+            box-sizing: border-box;
+            background-color: #ccc;
+            display: block;
+            margin: 20px auto;
+        }
+
+        .btnSet button:active{
+            background-color: #bbb;
+            border: 10px solid #bbb;
+        }
+
+
+        img{
+            width: 80%;
+            display: block;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="output">
+
+    </div>
+
+    <div class="btnSet">
+        <button class="btn1">안녕하세요</button>
+        <button class="btn2">반갑습니다</button>
+        <button class="btn3"><h3>H3태그</h3></button>
+        <button class="btn4"></button>
+        <button class="btn5"></button>
+        <button class="btn6">
+            <img src="images/image1.jpg">
+        </button>
+    </div><!--btnSet-->
+
+<script src="js/jquery-3.6.4.min.js"></script>
+<script>
+   
+/*
+ text(), html()
+1. 
+text('내용') 을 쓰면 해당 요소에게 '내용'을 텍스트로 넣을
+수 있다.
+html('내용') 을 쓰면 해당 요소에게 '내용'을 html 코드로
+삽입할 수 있다. 
+
+2.
+$(선택자).text();
+$(선택자).html();
+
+대상의 내부에 있는 텍스트나 html을 가져올 수 있다.
+(변수에 저장해서 쓰세염....)
+
+*/
+
+$('.btn4').text('4월 3일 월요일');
+$('.btn5').html('<h3>동해물과 백두산이</h3>');
+
+
+let btn1 = $('.btn1').text(); //대상의 텍스트를 가져오기
+$('.output').text(btn1);
+
+
+/*
+
+btn2을 클릭 하면, 해당 요소 안에 들어있는 
+텍스트를 가져와서, .output안에 출력하기!!!
+*/
+
+$('.btn2').click(function(){
+
+    let txt2 = $('.btn2').text();
+    $('.output').text(txt2);
+    //text()로 텍스트를 넣으면 기존에 있던 텍스트는 사라지고
+    //새로운것이 들어온다 
+});
+
+/*
+
+ .btn3 을 클릭 하면, 해당 요소 안에 들어있는 html을 구한 다음,
+  .output에 html로 출력해봅시다 
+*/
+
+$('.btn3').click(function(){
+    let txt3 = $('.btn3').html();
+    $('.output').html(txt3);
+});
+
+$('.btn6').click(function(){
+    let img = $(this).html();
+    $('.output').html(img);
+});
+
+
+</script>
+
+</body>
+</html>

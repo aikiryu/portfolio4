@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        div{
+            font-size: 80px;
+            text-align: center;
+            font-weight: 900;
+            font-family: arial;
+            margin: 40px auto;
+        }
+
+        .box1{
+            width: 200px;
+            height: 400px;
+            background-color: turquoise;
+        }
+
+        .box2{
+            width: 180px;
+            height: 320px;
+            background-color: pink;
+        }
+
+        .box3{
+            width: 220px;
+            height: 460px;
+            background-color: yellowgreen;
+        }  
+
+        .box4{
+            width: 180px;
+            height: 370px;
+            background-color: violet;
+        }
+
+        .box5{
+            width: 420px;
+            height: 222px;
+            background-color: aqua;
+        }
+
+        .box6{
+            width: 580px;
+            height: 370px;
+            background-color: springgreen;
+        }
+        
+
+
+
+    </style>
+</head>
+<body>
+    
+
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+    <div class="box4">4</div>
+    <div class="box5">5</div>
+    <div class="box6">6</div>
+
+<script src="js/jquery-3.6.4.min.js"></script>
+<script>
+
+    $('.box1').width(500);
+    $('.box1').height(500);
+
+    let box1Wid = $('.box1').width();
+    let box1Hig = $('.box1').height();
+
+
+
+//console.log() 는 ,로 구분해서 여러개의 값을
+//한꺼번에 출력해볼 수 있습니다. 
+    console.log(box1Wid,box1Hig);
+
+/*
+    width()는 두가지의 기능을 가지고 있습니다.
+
+    1. $(선택자).width(); 
+      선택자의 너비값을 구하기 
+    
+    2. $(선택자).width(1000);
+     선택자의 너비를 1000으로 설정하기 
+     주의사항 : 단위안넣습니다
+              단위를 넣어야할때는 ''문자열로!!
+
+
+모든 div를 클릭했을때
+해당 div의 너비와 높이를 반전시킵니다.
+> 만약 .item의 너비가 300px 이고 높이가 500px일때
+> 해당 .item을 클릭하면, 너비가 500px이 되고, 높이가 300px
+  이 됩니다. 
+
+1. div를 클릭했을때
+2. 클릭한 div의너비와 높이를 각각 구합니다
+3. 구한 너비와 높이를 바꿔 끼워넣습니다. 
+
+*/
+ $('div').click(function(){
+    
+    let wid = $(this).width(); //클릭한 것 너비 구하기
+    let hig = $(this).height(); //클릭한것 높이 구하기
+
+    $(this).width(hig).height(wid); //너비에 hig 반영
+                                    //높이에 wid 반영 
+
+
+ })
+
+
+
+</script>
+
+
+
+</body>
+</html>

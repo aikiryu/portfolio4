@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>논리연산자</title>
+</head>
+<body>
+    
+    <script>
+        // && 연산자
+    // let size = prompt('발 사이즈는?');
+
+    // if(size >= 220 && size <= 250){
+    //     document.write('재고가 있습니다');
+    // }else{
+    //     document.write('재고가 없습니다')
+    // }
+
+// let local = prompt('사는 지역은?');
+// let gender = prompt('성별을 입력해주세요');
+
+// if(local == '부산' && gender == '남성'){
+//     document.write('참가 가능합니다');
+// }else{
+//     document.write('참가 불가능 합니다');
+// }
+
+/*
+ 입력받은 local 이 "부산"이고
+         gender 가 "남성" 일때만
+        "참가 가능합니다" > 메세지
+
+    아닐 경우(= 단 하나라도 만족하지 못할 경우)
+     "참가가 불가능합니다"
+*/
+
+/*
+ && 논리곱(And 연산자) - 엮여있는 모든 비교구문이 
+    다 true여야지만 결과값이 true 
+    : 한국어로 풀이 했을때 "동시에"가 들어가도
+    어색하지 않은 것 
+    ex) 220보다 크고 동시에 250보다 작은것
+        "빨강"이면서 동시에 140보다 큰것 
+
+ || 논리합(Or 연산자) - 엮여있는 모든 비교구문들 중
+   단 하나의 true만 있어도 결과값이 true 
+   : 한국어로 풀이 했을 때, "~거나" 가 들어가도 
+    어색하지 않은 것들 
+  ex) 부산에 살거나 남성인 경우
+      7살보다 어리거나 70살 보다 많은 경우
+
+(₩ 키를 shift 누르고 두번 쓰세요)
+
+
+ 
+논리합!
+1. 나이를 물어보고
+2. 만약 나이가 5살보다 어리거나 70세보다 많으면
+   "무료입장입니다"
+3. 아닐경우 입장료는 4천원 입니다 라고 메세지 띄우기
+*/
+// let age = prompt('나이를 입력해주세요');
+// if(age < 5 || age >= 70){
+//     document.write('무료입장입니다');
+// }else{
+//     document.write('입장료는 4000원 입니다');
+// }
+
+/*
+먼저 발사이즈를 물어보고
+사이즈가 220보다 작거나 250보다 크면
+"재고가 없습니다"
+아니면 "재고가 있습니다"
+*/
+
+let size = prompt('사이즈를 입력해주세요');
+
+if(size < 220 || size > 250){
+    document.write('재고가 없습니다');
+}else{
+    document.write('재고가 있습니다');
+}
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+

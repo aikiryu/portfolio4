@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+//비교연산자
+
+/*
+ 비교연산자란?
+ 두개의 피연산자를 가지며 
+ true 혹은 false 단 두가지의 결과값만을
+ 나타내는 연산자다
+
+ 두 피연산자를 비교하여서 값을 도출하며,
+ true / false 외의 다른 값은 존재할 수가 없다.
+
+ > 크다
+ < 작다
+ >= 크거나같다
+ <= 작거나같다
+ == 같다
+ === (데이터의 타입까지 )같다
+ != 다르다
+ !== (데이터의 타입까지 비교했을 때) 다르다
+*/
+
+let a = 30;
+let b = 45;
+let c = "30";
+let d = 100;
+
+document.write(a < b);
+
+document.write(a <= d);
+document.write(a <= 30);
+document.write(a < 30);
+
+//같다
+// =는 같다는 의미가 아니다!
+// 대입연산자: 오른쪽의 값을 왼쪽에 대입,저장
+//같다는 ==으로 나타냅니다.
+/*
+== 은 데이터의 값만 비교합니다.
+형태에 구애받지 않고, 
+데이터가 가지고 있는 수치적 값만 비교하여
+같다 다르다를 나타냅니다. 
+
+=== 은 데이터의 형태까지 비교하여서
+같다 다르다를 나타냅니다.
+데이터가 가지고 있는 값이 같다 하더라도
+두 데이터의 형태가 서로 다르면 
+다르다고 이야기 합니다. 
+*/
+
+document.write('<hr>');
+document.write(a == c); //true
+document.write(a === c); //false 
+document.write(true === 1);
+
+/*
+같지않다 !=
+(대체적으로 !는 부정의 의미)
+
+!= 은 데이터의 수치만 비교해서 같지 않으면 
+true, 같으면 false를 나타냄
+
+!==은 데이터의 형태까지 비교해서
+같지 않으면 true, 같으면 false
+
+*/
+
+document.write('<hr>');
+document.write(a != c);//false
+document.write(a !== c); //true
+
+
+    </script>
+
+
+
+
+</body>
+</html>

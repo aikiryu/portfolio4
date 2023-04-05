@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            list-style: none;
+            width: 50px;
+            height: 50px;
+            background-color: turquoise;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li class="test"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script>
+        $('li').click(function(){
+
+            $(this).css({'backgroundColor':'dodgerblue'})
+            .siblings()
+            .css({'backgroundColor' : 'turquoise'});
+
+            let i = $(this).index();
+            alert(i);
+
+
+        });
+/*
+        li를 클릭하면 해당 li(내가 클릭한 바로 그 li!!)만
+        백그라운드 색상을 dodgerblue로 변경 
+
+        해당 li가 몇번째 인지 alert() 사용해서 알려주기
+
+
+
+
+*/
+
+
+                    //index() 해당 요소가 몇번째인지 구함
+        let test = $('.test').index();
+
+
+        console.log(test);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        code{
+            white-space: pre;
+        /* 
+    white-space는 웹문서상에 문자가 출력되는
+    규칙을 정하는 속성 
+
+    pre는 줄바꿈 / 띄어쓰기등 공백문자를
+    모두 적용시키는 옵션 
+        */
+        }
+
+.num{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: turquoise;
+    font-family: impact;
+    font-size: 64px;
+    text-align: center;
+    line-height: 200px;
+    user-select: none !important;
+}
+/* 
+box-shadow:10px 20px 30px rgba(0,0,0,0.3)
+           가로  세로  번짐  색상
+           이 앞에 inset을 붙여주면 
+           내부그림자로 작동한다 
+*/
+
+.num:active{
+    background-color: darkturquoise;
+    box-shadow: inset 10px 10px 10px rgba(0,0,0,0.3);
+}
+    </style>
+</head>
+<body>
+
+    <div class="num">
+        0
+    </div>
+
+<code>
+1.변수 variable 
+숫자가 아니라, 데이터를 저장하는 공간
+
+let a = 30; 
+let (변수선언키워드)
+a (변수 이름)
+= (오른쪽의 데이터를 왼쪽에 저장/대입)
+30 (데이터)
+
+변수이름만들기 규칙 
+1. 영어/숫자만 사용 
+2. 특문 _, $
+3. 대소문자구별
+4. 숫자로 시작하지 말것
+
+2. 데이터의 타입
+ 숫자형 Number
+  123,0.2393,-2312...
+ 
+ 문자열 String
+  "학교종이", "땡땡땡", '어서모이자'
+ 
+ 논리형 Boolean
+   true / false
+
+ 비어있음
+  Undefined 변수를 선언해놓고 아무것도 저장하지
+    않아서 자연스럽게 텅 비어 있는 상태 
+  null 어떠한 사유로 변수등 데이터 저장 공간을
+    비워줘야 할때 사용하는 키워드 
+
+3. 연산자 Operator
+ 1. 오칙연산 +,-,*,/,%
+ +의 경우, 문자열데이터와 다른 데이터를 더하면
+ 무조건 하나로 이어진 문자열데이터가 나온다 
+
+ %는 나머지를 구하는 연산자다 
+ 7 % 3  // 2...1
+
+ 2. 할당연산자
+</code>
+
+
+<script>
+//num을 클릭하면 num안에 있는 숫자가 증가!
+//1. 선택자와 데이터를 잡아주기
+
+let num = document.querySelector('.num');
+let content = 0;
+
+//2. num을 클릭하면, content의 숫자가 증가 
+//2-1. num에게 클릭 이벤트 달아주기
+
+num.addEventListener('click',function(){
+//2-2. content의 숫자 1씩 증가
+       content++; 
+    console.log(content);
+//console에 출력해보기
+//개발자 도구 내 콘솔은 단순한 데이터값을
+//확인하기 가장 좋은 도구입니다.
+//데이터를 확인해 볼때는 document등에 쓰는 게 아니라
+//console에서 출력해보는 것이 올바른 방식입니다.
+
+
+//3. 증가하는 content를 num안에 출력하기
+
+    num.innerText = content; 
+
+if(content > 29){
+    alert('너무 커지고 있습니다');
+}
+
+
+});
+
+
+
+
+
+
+
+
+
+
+    let a = 10;
+        a = a + 2; // 12
+        a = a + 20; //32
+
+        a += 40; //72
+
+        a -= 5; //67
+        // a = a - 5;
+
+        a -=10; //57
+
+        a *= 5; //285
+        //a = a * 5;
+
+        a /= 3; //95
+        //a = a / 3;
+
+
+        a++; //96
+        a++; //97
+        a++; //98
+
+    //a++은   a += 1
+    
+        a--; //97
+        a--; //96
+
+   //a--는   a -= 1
+
+    //증감연산자
+
+        //a = a**2;
+        
+         
+/*
+ += 은 할당연산자
+ 자기자신에 저장된 값을 불러다가 연산하고,
+ 다시 저장하기 
+*/
+    document.write(a);
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

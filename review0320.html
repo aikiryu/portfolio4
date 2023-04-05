@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+</head>
+<body>
+
+<script>
+//let a = prompt('아무거나 입력해주세요');
+
+/*
+if(비교식){
+    비교식이 참일때만 실행 될 실행구문
+}else{
+    비교식이 거짓일때 실행 될 구문
+}
+
+
+if(비교식1){
+    실행구문1
+}else if(비교식2){
+    실행구문2
+}else if(비교식3){
+    실행구문3
+}else{
+    실행구문4
+}
+
+
+*/
+// if(a >= 120){
+//     alert(a);
+// }else{
+//     document.write('수가 작습니다')
+// }
+let height = prompt('키를 입력해주세요');
+let weight = prompt('체중을 입력해주세요');
+
+let avrg = (height - 100) * 0.9;
+
+if(weight >= avrg*1.2){
+    document.write('과체중입니다');
+}else if(weight >= avrg*0.9){
+    document.write('정상체중입니다');
+}else if(weight >= avrg*0.8){
+    document.write('미용체중입니다');
+}else{
+    document.write('저체중입니다');
+}
+
+
+/*
+비만도계산기 (같은거)
+비만도 : 각 키마다 표준체중이 있는데,
+이 표준체중을 기준으로 얼마이상 더 나가면
+비만이다 / 덜나가면 저체중이다
+
+1. 키를 입력받자
+2. 체중을 입력받자
+----------------------------
+3. 표준체중을 구하자
+   (키 - 100) * 0.9
+4. 입력받은 체중과 표준체중(이하 표준)을 비교합시다. 
+그래서 
+만약 입력받은 체중이 표준에 대비하여 
+120%이상 많이 나가면 :과체중입니다 > 출력
+만약 입력받은 체중이 표준에 대비하여
+120%미만 90%이상 이면 : 표준체중입니다 > 출력
+만약 입력받은 체중이 표준에 대비하여
+90% 미만 80% 이상이면 : 미용체중입니다 > 출력
+80% 미만이면 : 저체중입니다 > 출력
+*/
+</script>
+
+
+
+
+</body>
+</html>

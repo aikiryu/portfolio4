@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{margin:0;padding:0}
+        header{
+            height: 80px;
+            background-color: blue;
+        }
+        h1{
+            color: #fff;
+            text-align: center;
+            font-size: 22px;
+            padding-top: 20px;
+        }
+
+        button{
+            background-color: darkblue;
+            width:50px;
+            height: 50px;
+            border: 0;
+            color: #fff;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+/* 옆에서 튀어나오는 메뉴들 ! 
+ex) 모바일메뉴들
+은 대부분
+position:fixed로 잡아둡니다.  */
+        aside{
+            position: fixed;
+            width: 50%;
+            height: 100%;
+            background-color: navy;
+            right: -50%;
+            top: 0;
+        }
+
+        .open span{
+            width: 26px;
+            height: 4px;
+            margin-bottom: 4px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #fff;
+            border: 5px;
+        }
+
+        .open span:last-child{
+            margin-bottom: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>logo</h1>      
+
+        <button class="open">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+<!-- nav,header,footer와 같은 시맨틱태그
+옆에서 튀어나오는 네비게이터나 위젯들을 aside에 담는다 -->
+    <aside>
+        <button class="close">close</button>
+
+    </aside>
+
+
+<script src="js/jquery-3.6.4.min.js"></script>
+<script>
+//.open을 누르면 aside의 left가 0 지점으로 animate된다
+
+/*
+animate({변할값},걸리는 시간)
+
+이때 1초 = 1000 (밀리세컨)
+
+*/
+
+$('.open').click(function(){
+
+    $('aside').animate({'right' : 0},1000);
+
+});
+//.close를 누르면 aside의 right가 -50%지점으로 animate된다
+$('.close').click(function(){
+
+    $('aside').animate({'right':'-50%'});
+
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+// let local = prompt('사는 지역');
+
+// if(local == '부산'){
+//     document.write('참가가능합니다');
+// }else{
+//     document.write('참가불가능합니다');
+// }
+
+//240보다 크고 280보다 작으면 .. (X)
+//240 < x < 280 이렇게 쓰면 안됩니다. 
+
+
+// let age = prompt('나이를 입력해 주세요');
+// if(age < 7){
+//     document.write('무료입장가능합니다')
+// }else{
+//     document.write('입장료 5천원입니다')
+// }
+
+
+/*
+1. 먼저 변수(age)를 만들고, 
+2. prompt로 질문합니다 (나이를 입력해주세요)
+3. 만약 입력받은 값이 7보다 작으면 
+   무료입장 가능합니다 라고 출력
+4. 만약 입력받은 값이 7보다 작지 않으면
+   입장료 5천원 입니다 라고 출력 
+*/
+
+//220보다 크고 250보다 작거나 같으면 재고가 있다
+//아니면 없다 
+/*
+size가 220보다 크고 (동시에)
+size가 250보다 작거나 같을때
+
+size > 220 && size <= 250
+
+[논리연산자]
+&& 논리곱 
+엮여있는 모든 항들이 다 true여야지만
+결과값이 true가 나옵니다. 
+
+*/
+
+// let size = prompt('신발사이즈 입력');
+
+// if(size > 220 && size <= 250){
+//     document.write('재고가 있습니다');
+// }
+
+let height = prompt('키를 입력해 주세요');
+if(height>=150 && height<190){
+    document.write('탑승가능합니다');
+}else{
+    document.write('탑승이 불가합니다');
+}
+
+
+/*
+1.변수(height)를 만들고 prompt로 질문합니다
+  ('키를 입력해주세요');
+2. 만약 height가 150보다 크고 190보다 작으면
+   '탑승가능합니다'
+3. 아닐 경우
+   '탑승이 불가합니다'
+*/
+
+
+
+</script>
+</body>
+</html>

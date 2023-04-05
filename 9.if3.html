@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    // let size = prompt('사이즈를 입력해주세요');
+
+    // if(size >= 220 && size <=250){
+
+    //     document.write('pink, black, red');
+
+    // }else if(size > 250 && size <= 270){
+
+    //     document.write('black, red');
+
+    // }else if(size > 270){
+
+    //     document.write('black');
+
+    // }else{
+    //     document.write('재고가 없습니다');
+    // }
+/*
+ 핑크색, 검정색, 빨간색
+ 220~250사이즈에서는 핑크,검정,빨강이 다 있어요
+ 그런데 250 초과부터 270까지는 
+   검정색과 빨강만 있어요
+그런데 이제 270 넘어서부터는
+  오로지 검정색만 있는 상황 ! 
+
+
+if..else if 구문
+
+if(비교식1){
+
+    비교식1이 true일때 실행
+    만약 true였으면 여기서 종료됨 
+
+}else if(비교식2(1이 false일때만)){
+
+    비교식2가 true일때 실행될 실행구문
+    만약 true였으면 여기서 종료됨 
+
+}...else{
+
+    상단에 나열된 모든 조건식들에서 모두
+    false가 떴을때 실행될 것
+
+}
+
+
+
+
+let mon = prompt('지금은 몇월인가요')
+만약 3~5면 "봄입니다"
+    6~8면 "여름입니다"
+    9~11면 "가을입니다"
+    12~2면 "겨울입니다"
+
+    라고 출력 ^.^ !!!!!
+*/
+let mon = prompt('지금은 몇월인가요');
+
+
+if(mon>=3 && mon<=5){
+    document.write('봄입니다');
+}else if(mon>=6 && mon<=8){
+    document.write('여름입니다');
+}else if(mon>=9 && mon<=11){
+    document.write('가을입니다');
+}else if(mon==1 || mon==2 || mon==12){
+    document.write('겨울입니다');
+}else{
+    document.write('제대로 된 값을 입력해주세요');
+}
+
+/*
+else if(mon>0 && mon<=12){
+    document.write('겨울입니다');
+}
+*/
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 2px solid #000;
+            margin: 40px auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="con">
+        <div class="item1"></div>
+        <div class="item2"></div>
+        <div class="item3"></div>
+        <div class="item4"></div>
+    </div>
+
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script>
+/*
+item1을 클릭하면 item1백그라운드색상 red로 변경
+*/
+$('.item1').on('click',function(){
+
+    $('.item1').css({'backgroundColor' : 'red'});
+
+});
+
+// .item2를 클릭하면 .item2백그라운드 색상 green
+
+$('.item2').on('click',function(){
+    $('.item2').css({'backgroundColor' : 'green'})
+});
+
+//item3을 클릭하면 item4가 백그라운드색상 yellow
+
+$('.item3').on('click',function(){
+    $('.item4').css({'background':'yellow'});
+});
+
+$('.item4').on('click',function(){
+    $('.con').children('div').css({
+        'backgroundColor' : 'pink'
+    });
+});
+
+$('.con div').on('click',function(){
+
+    $(this).css({'border' : 'solid #000 4px'})
+    .siblings().css({'borderWidth':'2px'});
+
+});
+
+/*
+1. .item4를 클릭하면 con안의 모든 div들 전부
+백그라운드 색상 pink로 만들기 
+
+2. .con안의 모든 div들 클릭하면
+   클릭한 그 div만 선 굵기를 4px로 바꾸기 
+
+*/
+
+
+    </script>
+</body>
+</html>
+
+

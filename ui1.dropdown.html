@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        ul{list-style: none;}
+        a{color: inherit; text-decoration: none;}
+
+        header{
+            background-color: powderblue;
+            width: 1200px;
+            margin:0 auto;
+        }
+
+        h1{
+            color: steelblue;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .gnb{
+            display: flex;
+        }
+
+/* 
+        .gnb li{} gnb내부의 모든 li 
+        .gnb>li{} gnb바로 아래에 있는 자식 li 
+*/
+
+        .gnb>li{
+            width: 25%;
+            text-align: center;
+            position: relative;
+        }
+
+        .sub{
+    /* 
+    대부분 조작으로 튀어나오게 되는 요소들은
+    position:absolute로 독립시켜둔다. 
+    그리고 초기값은 항상 
+    display:none 을 해둔다
+    */
+            display: none;
+            position: absolute;
+            width: 100%;
+            background-color: steelblue;
+            top: 20px;
+            left: 0;
+            color: #fff;
+        }
+        .sub li{
+            padding:8px 0;
+            border-bottom: 1px solid #fff;
+        }
+
+
+    #header{
+        height: 100px;
+        border-bottom: 2px solid #b5121b;
+        position: relative;
+    }
+
+    #header p{
+        font-size: 30px;
+        text-align: center;
+        padding-top: 10px;
+        margin-bottom: 10px;
+        font-weight: 900;
+        font-family: arial;
+    }
+    .list{
+        font-size: 22px;
+        font-weight: 900;
+        font-family: 'arial';
+        display: flex;
+    }
+
+    .list li{
+        width: 20%;
+        text-align: center;
+    }
+
+    .submenu{
+        background-color: #6f6f6f;
+        color: #fff;
+        position: absolute;
+        left: 0;
+        top: 102px;
+        width: 100%;
+        display: none;
+    }
+
+    .subWrap{
+        width: 1000px;
+        margin:0 auto;
+        padding-top:20px;
+        display: flex;
+        padding-bottom: 40px;
+    }
+    .subWrap ul{
+        width: 20%;
+        text-align: center;
+    }
+
+
+
+
+
+    #header .wrap{
+        width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    </style>
+</head>
+<body>
+    
+<header>
+    <h1>LOGO</h1>
+
+    <ul class="gnb">
+        <li>
+            <a href="#">GNB1</a>
+            <ul class="sub">
+                <li><a href="#">sub1</a></li>
+                <li><a href="#">sub2</a></li>
+                <li><a href="#">sub3</a></li>
+                <li><a href="#">sub4</a></li>
+            </ul><!--sub-->
+        </li><!--gnb1-->
+
+        <li>
+            <a href="#">GNB2</a>
+            <ul class="sub">
+                <li><a href="#">sub1</a></li>
+                <li><a href="#">sub2</a></li>
+                <li><a href="#">sub3</a></li>
+            </ul><!--sub-->
+        </li><!--gnb2-->
+
+        <li>
+            <a href="#">GNB3</a>
+            <ul class="sub">
+                <li><a href="#">sub1</a></li>
+                <li><a href="#">sub2</a></li>
+                <li><a href="#">sub3</a></li>
+                <li><a href="#">sub4</a></li>
+                <li><a href="#">sub5</a></li>
+            </ul>
+        </li><!--gnb3-->
+
+        <li>
+            <a href="#">GNB4</a>
+            <ul class="sub">
+                <li><a href="#">sub1</a></li>
+                <li><a href="#">sub2</a></li>
+                <li><a href="#">sub3</a></li>
+                <li><a href="#">sub4</a></li>
+            </ul>
+        </li><!--gnb4-->
+
+
+    </ul><!--gnb-->
+</header>
+
+
+<div id="header">
+ <div class="wrap">
+    <p>Logo</p>
+    
+    <ul class="list">
+        <li><a href="#">list1</a></li>
+        <li><a href="#">list2</a></li>
+        <li><a href="#">list3</a></li>
+        <li><a href="#">list4</a></li>
+        <li><a href="#">list5</a></li>
+    </ul><!--list-->
+  </div><!--wrap-->
+
+  <div class="submenu">
+    <div class="subWrap">
+     <ul class="menu">
+        <li><a href="#">menu1</a></li>
+        <li><a href="#">menu2</a></li>
+        <li><a href="#">menu3</a></li>
+        <li><a href="#">menu4</a></li>
+     </ul><!--menu1-->
+
+     <ul class="menu">
+        <li><a href="#">menu1</a></li>
+        <li><a href="#">menu2</a></li>
+        <li><a href="#">menu3</a></li>
+     </ul><!--menu2-->
+
+     <ul class="menu">
+        <li><a href="#">menu1</a></li>
+        <li><a href="#">menu2</a></li>
+        <li><a href="#">menu3</a></li>
+        <li><a href="#">menu4</a></li>
+        <li><a href="#">menu5</a></li>
+     </ul><!--menu3-->
+
+     <ul class="menu">
+        <li><a href="#">menu1</a></li>
+        <li><a href="#">menu2</a></li>
+        <li><a href="#">menu3</a></li>
+     </ul><!--menu4-->
+
+     <ul class="menu">
+        <li><a href="#">menu1</a></li>
+        <li><a href="#">menu2</a></li>
+        <li><a href="#">menu3</a></li>
+        <li><a href="#">menu4</a></li>
+        <li><a href="#">menu5</a></li>
+        <li><a href="#">menu6</a></li>
+     </ul><!--menu5-->
+    </div><!--subWrap-->
+  </div><!--submenu-->
+
+</div><!--#header-->
+
+
+
+<script src="js/jquery-3.6.4.min.js"></script>
+<script>
+/*
+.gnb바로 아래의 li에게 마우스를 올리면,
+해당 .sub가 slideDown() 됩니다. 
+    > 마우스를 올린 li 안의 서브!
+*/
+
+$('.gnb').children('li').on('mouseover',function(){
+
+    $(this).find('.sub').stop().slideDown();
+
+}).on('mouseout',function(){
+
+    $('.sub').stop().slideUp();
+
+});
+
+
+$('.list li').mouseover(function(){
+    $('.submenu').stop().slideDown(); 
+});
+            //mouseout대신 mouseleave를 씁니다!
+$('#header').mouseleave(function(){
+    $('.submenu').stop().slideUp();
+});
+
+/*
+.mouseout() 해당 요소에서 마우스가 벗어날때마다 실행됨
+.mouseleave() 해당 요소(자식까지 포함하여서)에서 마우스가
+완전히 벗어날때 한번 실행됨 
+
+
+*/
+
+
+
+
+
+/*
+.list의 li에게 마우스를 올리면  > .submenu가 슬라이드 다운된다
+-----------------------
+
+#header에서 마우스를 제거하면 > .submenu가 슬라이드 업된다
+
+*/
+
+
+
+</script>
+
+
+</body>
+</html>

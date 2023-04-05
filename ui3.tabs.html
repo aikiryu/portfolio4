@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{margin:0;padding:0;}
+        ul{list-style: none;}
+
+        .tabs{
+            width: 800px;
+            border: 4px solid #000;
+            margin: 40px auto;
+        }
+        ul{
+            display: flex;
+            border-bottom: 1px solid #000;
+        }
+        ul li{
+            width: 25%;
+            line-height: 32px;
+            text-align: center;
+            border-right: 1px solid #000;
+            cursor: pointer;
+        }
+        ul li:hover{
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        ul li:last-child{
+            border:0;
+        }
+
+        ul li:first-child{
+            background-color: #000;
+            color: #fff;
+        }
+
+        .con{}
+        .con div{
+            height: 400px;
+            display: none;
+        }
+
+        .con .box1{
+            display: block;
+        }
+
+        .box1{background-color: gold;}
+        .box2{background-color: orange;}
+        .box3{background-color: orangered;}
+        .box4{background-color: red;}
+
+
+
+    </style>
+</head>
+<body>
+
+
+<div class="tabs">
+    <ul>
+        <li>gold</li>
+        <li>orange</li>
+        <li>orangered</li>
+        <li>red</li>
+    </ul>
+
+    <div class="con">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+    </div>
+</div><!--tabs-->
+    
+
+    
+<script src="js/jquery-3.6.4.min.js"></script>
+<script>
+/*
+★ li를 클릭 했을때,
+  > 클릭한 li만 배경색상 검정, 글자색 흰색으로 바꾸기
+  > 나머지 li들은 다시 배경색상 transparent, 글자색 검정으로
+  > 클릭한 li가 몇번째인지를 구한 다음
+  > 그 번째에 맞는 .con안의 div를 display:block,
+  > 나머지 div들은 display:none 처리하기
+*/
+
+$('li').click(function(){
+
+    $(this).css({'backgroundColor' : 'black',
+               'color':'#fff'})
+           .siblings().css({'backgroundColor':'transparent',
+                             'color':'#000'});
+    
+    let i = $(this).index();
+
+    $('.con div').eq(i).css({'display':'block'})
+    .siblings().css({'display':'none'});
+/*
+css({'display':'block'}) = show()
+css({'display':'hide'}) = hide()
+*/
+});
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            margin:40px auto;
+            border: 2px solid #000;
+        }
+    </style>
+
+</head>
+<body>
+    
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+<div class="box4"></div>
+
+<script src="js/jquery-3.6.4.min.js"></script>
+<script>
+
+//.box1에게 백그라운드 색상 pink
+$('.box1').css({
+    'backgroundColor' : 'pink'
+});
+
+// .box2는 백그라운드 색상 limegreen,
+// 모서리 둥글기 50% 
+
+$('.box2').css({
+    'backgroundColor':'limegreen',
+    'borderRadius' : '50%'
+});
+
+//.box3은 백그라운드 색상 deeppink,
+// 선굵기 4px로 바꾸고
+// 너비를 350px로 바꾸기 
+
+$('.box3').css({
+    'backgroundColor' : 'deeppink',
+    'borderWidth' : '4px',
+    'width' : '350px'
+})
+
+//.box4은 백그라운드 색상 dodgerblue
+//동그라미로 만들고
+//너비 400px, 높이 400px
+
+$('.box4').css({
+    'backgroundColor' : 'dodgerblue',
+    'borderRadius' : '50%',
+    'width' : '400px',
+    'height' : '400px'
+});
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .slide1{}
+        .slide1 .item{
+            height: 500px;
+        }
+        .slide1 .item1{background:red;}
+        .slide1 .item2{background:orangered;}
+        .slide1 .item3{background:orange;}
+        .slide1 .item4{background:gold;}
+        .slide1 .item5{background:yellow;}
+
+        .prev,.next{
+            font-size: 40px;
+            background-color: rgba(0,0,0,0.5);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            line-height: 0px;
+            padding-bottom: 10px;
+            box-sizing: border-box;
+            border: 0;
+            position: absolute;
+            top: 200px;
+        }
+
+        .prev{left:40px}
+        .next{right: 40px;}
+
+        .prev:hover, .next:hover{
+            opacity: 0.8;
+        }
+
+/* 
+slick 페이저 구조
+  ul.slick-dots
+    ㄴ li (정렬대상)
+       ㄴ button (꾸미기대상)
+
+
+    활성화 된 상태에서는 해당 li에게 
+    .slick-active 라고 하는 클래스가 추가됩니다.
+    그래서 이것을 활용해서 스타일을 변경할 수 있습니다.
+
+
+*/
+        .slick-dots{
+            display: flex;
+            list-style:none;
+            justify-content: center;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            bottom: 20px;
+        }
+        .slick-dots li{
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+        .slick-dots li button{
+            border-radius: 50%;
+            background-color: yellowgreen;
+            width: 15px;
+            height: 15px;
+            border: 0;
+            text-indent: -9999px;
+            /* 글자 제거하기 */
+        }
+
+
+    .slick-dots li.slick-active button{
+        background-color: limegreen;
+        border: 1px solid forestgreen;
+    }
+
+
+    .slide2{
+        margin-top: 100px;
+    }
+
+    .slide2 .item{
+        width: 400px;
+        height: 450px;
+        background-color: powderblue;
+        color: steelblue;
+        font-size: 200px;
+        text-align: center;
+        line-height: 450px;
+        font-weight: 900;
+        font-family: arial;
+        margin-right: 40px;
+    }
+
+    .slide3{
+        margin-top:100px
+    }
+
+    .slide3 .item .inner{
+        width: 400px;
+        height: 450px;
+        background-color: pink;
+        color: palevioletred;
+        font-size: 200px;
+        text-align: center;
+        line-height: 450px;
+        font-weight: 900;
+        font-family: arial;
+        margin-right: 40px;
+    }
+
+    .slide4{
+    margin-top:100px;
+        }
+
+    .txt .item{
+        text-align: center;
+        line-height: 250px;
+        font-weight: 900;
+        font-family: 'arial';
+        text-align: center;
+        font-size: 80px;
+    }
+
+    .card .item{
+        height: 400px;
+    }
+    .card .item1{background:deeppink;}
+    .card .item2{background:dodgerblue;}
+    .card .item3{background:limegreen;}
+    .card .item4{background:gold;}
+    .card .item5{background:darkviolet;}
+
+
+
+    </style>
+
+    <link rel="stylesheet" href="js/slick/slick.css">
+
+<!-- 
+1. slick등 슬라이드 플러그인을 사용할때는 반드시
+제공되는 css파일이 필요한지 확인해야 합니다.
+slick의 경우 css파일이 필수입니다. 
+
+2. 내가 만든 요소에게 slick을 적용시킬 때
+ - 슬라이드가 될 컨테이너를 만든다 (:slide1)
+ - 슬라이드페이지가 될 요소들을 컨테이너 바로 아래 자식으로
+   하나하나 넣는다(:item)
+ - 슬라이드페이지가 될 것들은 하나하나 클래스를 부여하고
+ - css 로 변경시킬 때는 해당 클래스를 호명하여 선택해서
+   css를 준다. 
+   ('.con div' / '.con div:nth-child(3)' -> 금지)
+
+ -->
+ 
+</head>
+<body>
+    
+
+<div class="slide1">
+    <div class="item1 item"></div>
+    <div class="item2 item"></div>
+    <div class="item3 item"></div>
+    <div class="item4 item"></div>
+    <div class="item5 item"></div>
+</div><!--slide-->
+
+<button class="prev">👈</button>
+<button class="next">👉</button>
+
+
+
+<div class="slide2">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+    <div class="item">9</div>
+    <div class="item">10</div>
+</div><!--slide2-->
+
+
+<div class="slide3">
+    <div class="item">
+        <div class="inner">1</div>
+    </div>
+
+    <div class="item">
+        <div class="inner">2</div>
+    </div>    
+
+    <div class="item">
+        <div class="inner">3</div>
+    </div>   
+
+    <div class="item">
+        <div class="inner">4</div>
+    </div>   
+
+    <div class="item">
+        <div class="inner">5</div>
+    </div>   
+
+    <div class="item">
+        <div class="inner">6</div>
+    </div>   
+
+    <div class="item">
+        <div class="inner">7</div>
+    </div>    
+
+    <div class="item">
+        <div class="inner">8</div>
+    </div>
+    
+    <div class="item">
+        <div class="inner">9</div>
+    </div> 
+
+    <div class="item">
+        <div class="inner">10</div>
+    </div> 
+</div><!--slide3-->
+
+
+<div class="slide4">
+
+    <div class="txt">
+        <div class="item">DEEPPINK</div>
+        <div class="item">DODGERBLUE</div>
+        <div class="item">LIMEGREEN</div>
+        <div class="item">GOLD</div>
+        <div class="item">DARKVIOLET</div>
+    </div><!--txt-->
+
+    <div class="card">
+        <div class="item1 item"></div>
+        <div class="item2 item"></div>
+        <div class="item3 item"></div>
+        <div class="item4 item"></div>
+        <div class="item5 item"></div>
+    </div><!--card-->
+
+
+
+
+
+
+
+</div><!--slide4-->
+
+
+
+<script src="js/jquery-3.6.4.min.js"></script>
+<script src="js/slick/slick.min.js"></script>
+<script>
+    
+    //slick에 옵션주기
+
+    $('.slide1').slick({
+        'nextArrow' : '.next', //next버튼 연결
+        'prevArrow' : '.prev', //prev버튼 연결
+        'dots' : true, // 페이저버튼 추가 
+        'autoplay' : true, //자동재생
+        'autoplaySpeed' : 7000, //자동재생속도 (기본값 4초 = 4000)
+    });
+
+/*
+
+ 캐러셀을 적용시키면 
+ 각각의 슬라이드카드들의 너비는
+ 부모컨테이너 / slidesToShow개수 가 된다 
+  = 먼저 css로 줘놨던 너비값이 적용되지 않는다는 뜻!!!!!
+
+그런데 특정 너비를 반드시 유지해야하는 상황이라면, 
+각각의 카드 내부에 .wrap작업을 해야합니다. 
+ -> slide3 에서 해보자!!!!
+   -> .inner에게 너비를 줬기 때문에
+   slide의 item으로 작동하는 .item의 너비가 변하는 것과는
+   무관하게 .inner의 크기를 처음 의도했던대로 유지할 수 있다.
+
+*/
+
+
+    //캐러셀 Carousel
+    $('.slide2').slick({
+        'slidesToShow' : 4, //한화면에 보여줄 수 있는 개수
+        'slidesToScroll' :2, //한번 넘길때 넘어갈 개수(총 슬라이드개수에서 나눠서 떨어지는 숫자로 줍시다)
+    });
+
+
+    $('.slide3').slick({
+        'slidesToShow' : 4
+    });
+
+
+//다중슬라이드 = 멀티슬라이드 
+
+ $('.slide4 .txt').slick({
+    'asNavFor':'.slide4 .card' //같이 돌릴 슬라이드 지정
+ });
+
+
+ $('.slide4 .card').slick({
+    'asNavFor' :'.slide4 .txt',
+    'fade':true, //페이드모드로 변경
+    'arrows' : false // 화살표 없애기
+ });
+
+
+</script>
+</body>
+</html>

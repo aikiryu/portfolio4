@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px; height: 200px;
+            margin:40px auto;
+            border: 2px solid #000;
+        }
+
+    .list{
+        margin:20px 0;
+        display: flex;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .list li{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: turquoise;
+        margin:0 10px;
+        padding: 0;
+        list-style: none;
+    }
+
+    </style>
+</head>
+<body>
+
+<ul class="list">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul><!--list-->
+
+
+<div class="item1"></div>
+<div class="item2"></div>
+<div class="item3"></div>
+<div class="item4"></div>
+
+<script src="js/jquery-3.6.4.min.js"></script>
+<script>
+//.item1 을 클릭하면 배경색상 pink로 변경
+
+$('.item1').on('click',function(){
+    //클릭했을때 일어나는 모든 것들을 넣을 수 있다.
+    $('.item1').css({'background':'pink'});
+    $('body').css({'background' : 'black'});
+    $('div').css({'borderColor' : 'white'});
+
+});
+
+/*
+.item2를 클릭하면,
+body는 하얀색으로 변하고,
+모든 div는 선색상이 까만색으로 변할것임!
+
+*/
+
+$('.item2').on('click',function(){
+
+    $('body').css({'background' : '#fff'});
+    $('div').css({'borderColor' : '#000'});
+
+});
+
+
+$('.item3').on('click',function(){
+
+//this는 이벤트 타겟을 의미 
+//사용자가 클릭한 바로 그 대상
+//this는 문자열이 아니라 키워드기 때문에
+// 따옴표 쓰지 않습니당 
+$(this).css({'background' : 'orange'});
+
+
+});
+
+//.list에 li를 클릭하면 
+//li의 배경색상을 blue로 변경
+//클릭한 li(= this )를 제외한 나머지 li들은 다시
+//turquoise로 돌리기
+
+$('.list li').on('click',function(){
+
+    // $(this).css({'background':'blue'})
+    // .siblings()
+    // .css({'background' : 'turquoise'});
+ $('.list li').css({'background':'turquoise'});
+ $(this).css({'background' : 'blue'})
+
+});
+
+</script>
+
+
+    
+</body>
+</html>

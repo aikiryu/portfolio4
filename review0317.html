@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    //변수 : 데이터를 담고, 저장하는 공간
+    let a = 30;
+
+    //데이터의 타입
+    let num = 123; //숫자 Number
+    let str = '안녕하세요'; //문자열 String 
+    let bln = true; //논리형 Boolean true/false
+    let void1; //undefined 
+    let void2 = null; //변수를 비우는 용도로 사용 
+
+    //연산자 
+    /*
+     +, -, *, /, %
+    */
+
+    let op1 = 14;
+    let op2 = 27;
+
+    op1 = op1 + 2; //16
+
+    op1 += 2;
+    
+    op1 += 1; 
+
+    op1 ++; //1씩 증가시킨 다음 다시 op1 대입, 저장
+    op1 --;  
+/*
+    op1++; 후위연산자
+    ++op1; 전위연산자
+    
+    주로 후위연산자를 사용한다
+    두가지의 차이점은 대입이 되는 시점!
+
+*/
+// 비교연산자
+
+let d = "바나나";
+let e = "파인애플";
+/*
+알파벳과 한글 등 모든 문자는 고유의 코드를 가지고 
+있습니다. 문자끼리 비교를 할 땐 그 코드의 값을
+비교하는데, 나열할때 순서상 뒤에있는 것일 수록 
+값이 큽니다. 
+
+123 == "123";  true
+
+*/
+
+document.write(d<e);
+/*
+비교연산자
+>, <, >=, <=
+등호와 부등호의 위치는 서로 변경되어서는 안된다
+
+a == b 같다 (데이터의 값만 비교)
+a === b 같다 (데이터의 형태까지 비교)
+
+a != b 같지않다 (데이터의 값만 비교)
+a !== b 같지않다 (데이터의 형태까지 비교)
+
+결과값이 반드시 true 아니면 false가 나옵니다. 
+*/
+
+/*
+조건문
+
+if(비교식){앞의 비교식이 참일 때 실행될 것}
+
+if("바나나" < "파인애플"){
+    alert("3000원 입니다");
+}
+
+if(비교식){
+    앞의 비교식이 참일 때 실행될 것
+}else{
+    앞의 비교식이 거짓일 때 실행될 것
+}
+
+
+ 1. 발 사이즈를 묻고 답을 입력 받습니다. 
+ 2. 그 받은 답이,
+    220 ~ 250 "재고가 있습니다"
+      > 220보다 크면서 250보다 작을때 
+    ~ 220, 250~ "재고가 없습니다"
+     > 220보다 작거나 250보다 클때
+    라고 띄우기
+
+
+
+*/
+    let size = prompt('발 사이즈는?');
+
+    if(size >= 220){
+        document.write('재고가 있습니다');
+    }else{
+        document.write('재고가 없습니다');
+    }
+
+
+</script>    
+
+</body>
+</html>

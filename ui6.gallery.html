@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+        .wrap{
+            background-color: #eee;
+            height: 100vh;
+        }
+
+        .con{
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 220px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .item{
+            width: 380px;
+            border-radius: 15px;
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .item:hover img{
+            transform: scale(1.2);
+        }
+
+        .item .pic{
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .item img{
+            width: 100%;
+            height: 100%;
+            display: block;
+            transition: all 1.5s;
+        }
+
+        .item .txt{
+            padding: 15px 15px 25px;
+        }
+
+        .view{
+            z-index: 99;
+            display: none;
+            position: fixed;
+            width: 80%;
+            height: 80%;
+            left: 10%;
+            top: 10%;
+            background-color: rgba(255,255,255,0.3);
+            border:1px solid rgba(255,255,255,0.4);
+            border-radius:20px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
+
+            /*
+            backdrop-filter 해당 요소의 뒤쪽에 놓인 요소를
+            필터처리해서 보여줌 
+            -webkit-,-mo- 브라우저 접두사
+            몇몇 특정한 속성들은 상용화가 덜 되어있기 때문에
+            각각의 브라우저에서 지정되어있는 속성을 
+            사용해야 합니다. 그때 이러한 접두사를 넣어줍니다.
+            이런 것들은 점점 없어지고 있는 추세라서
+            background-image:linear-gradient / 
+            box-shadow등 대부분의 속성에서 사라지고 있는데
+            backdrop-filter만큼은
+            ios의 브라우저에서 적용이 되지 않고 있기 때문에
+            반드시 -webkit-접두사를 붙인 한 줄을
+            추가해줘야 합니다.
+
+            글래스모피즘 : 불투명 유리같은 느낌의 재질을
+            디자인상에 활용하여 레이아웃이나 요소를
+            만드는 것 
+            */
+        }
+
+        /* figure 영상이나 이미지를 넣는 태그 */
+        figure{
+            width: 600px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        figure img{
+            width: 100%;
+        }
+
+        .view h4{
+            position: absolute;
+            bottom: 60px;
+            left: 0px;
+            width: 100%;
+            text-align: center;
+        }
+        .view p{
+            position: absolute;
+            bottom: 30px;
+            left: 0px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .close{
+            background-color: transparent;
+            color: #666;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            border: 0;
+            font-size: 16px;
+        }
+
+        .closeWrap{
+            position: fixed;
+            z-index: 10;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.1);
+            display: none;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="wrap">
+
+
+        <div class="view">
+            <figure></figure>
+            <h4>이미지 제목</h4>
+            <p>이미지 설명</p>
+
+            <button class="close">close</button>
+        </div><!--view-->
+        <div class="closeWrap"></div>
+
+
+        <div class="con">
+
+            <div class="item">
+                <div class="pic">
+                    <img src="images/image1.jpg">
+                </div><!--pic-->
+                <div class="txt">
+                    <h4>첫번째 고양이 이미지</h4>
+                    <p>고양이 이미지 첫번째 설명</p>
+                </div><!--txt-->
+            </div><!--item-->
+
+            <div class="item">
+                <div class="pic">
+                    <img src="images/image2.jpg">
+                </div><!--pic-->
+                <div class="txt">
+                    <h4>두번째 고양이 이미지</h4>
+                    <p>고양이 이미지 두번째 설명</p>
+                </div><!--txt-->
+            </div><!--item-->
+ 
+            <div class="item">
+                <div class="pic">
+                    <img src="images/image3.jpg">
+                </div><!--pic-->
+                <div class="txt">
+                    <h4>세번째 고양이 이미지</h4>
+                    <p>고양이 이미지 세번째 설명</p>
+                </div><!--txt-->
+            </div><!--item-->
+           
+        </div><!--con-->
+
+    </div><!--wrap-->
+
+
+
+
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script>
+
+        $('.item').click(function(){
+            $('.view').stop().fadeIn();
+            $('.closeWrap').stop().fadeIn();
+            
+            let img = $(this).find('.pic').html();
+            $('.view figure').html(img);
+
+            let h4 = $(this).find('h4').text();
+            $('.view h4').text(h4);
+
+            let p = $(this).find('p').text();
+            $('.view p').text(p);  
+
+        });
+
+
+    $('.close, .closeWrap').click(function(){
+
+        $('.view').stop().fadeOut();
+        $('.closeWrap').stop().fadeOut();
+
+    });
+    
+/*
+1. .item을 클릭하면 
+2. .view가 fadeIn() 됩니다
+3. 클릭한 item안의 img를 가져옵니다
+4. 그리고 3번에서 가져온 이미지를 
+   .view안의 figure안에 넣습니다 
+
+5. 클릭한 item안의 h4 안의 텍스트를 가지고 와서
+6. .view안의 h4안에 넣습니다
+7. 클릭한 item 안의 p 안의 텍스트를 가지고 와서
+8. .view 안의 p.안에 넣습니다
+
+9. .close를 누르면 .view가 fadeOut() 됩니다! 
+*/
+
+
+    </script>
+
+
+
+    
+</body>
+</html>

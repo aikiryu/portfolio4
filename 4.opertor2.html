@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bar{
+            width: 30px;
+            height: 100px;
+            background-color: turquoise;
+        }
+    </style>
+</head>
+<body>
+    
+<div class="bar"></div>
+
+<pre>
+1. 변수 
+데이터를 저장하는 공간
+let varName = data;
+하나의 변수에는 하나의 데이터만 저장된다. 
+
+2. 데이터의 타입
+Number 숫자형 : 123,456,0.123
+String 문자열 : "안녕하세요", "반갑습니다"
+Boolean 논리형 : true, false; 
+Undefined, null 비어있음 
+
+3. 기본연산자
++ 더하기 : 문자와 다른 타입의 데이터를 더할 경우
+         하나의 문자열로 이어진다.
+- 빼기 
+* 곱하기
+/ 나누기
+% 나머지 : 자연수/자연수를 했을 때 자연수로
+  더 이상 나눠지지 않는 남은 수를 나머지라고 부른다.
+</pre>
+
+<script>
+
+    let a = 10;
+        a = a + 2; //12
+        a = a + 2; //14
+        a += 2; //16
+        a += 2; //18
+    
+        //할당연산자
+        //a에게 2를 더한 다음 다시 a에 저장 하는 것
+    document.write(a);
+
+
+
+let bar = document.querySelector('.bar');
+let wid = 30;
+
+bar.addEventListener('click',function(){
+
+    wid += 10;
+    
+    bar.style.width = wid+'px';
+
+
+});
+
+
+
+</script>
+</body>
+</html>
+
+

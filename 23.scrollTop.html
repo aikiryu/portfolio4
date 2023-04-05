@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            height: 10000px;
+        }
+
+        .count{
+            position: fixed;
+            top: 40px;
+            right: 40px;
+            background-color: turquoise;
+            font-size: 80px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            font-family: arial;
+            font-weight: 900;
+            text-align: center;
+            line-height: 300px;
+        }
+
+
+    
+        .conter:after{
+            content: '';
+            width: 100%;
+            display: block;
+            height: 1px;
+            background-image: 
+            linear-gradient(to right, transparent 20%, #ccc 80%, transparent);
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+<div class="count">00</div>
+
+<script src="js/jquery-3.6.4.min.js"></script>
+<script>
+//스크롤의 위치값을 구하여 .count안에다 출력해보기
+
+//$('.count').text('야호'); 텍스트 넣는 함수
+
+//0. 스크롤이 움직일 때 마다 
+//1.스크롤의 위치값을 구한다
+//2. count안에 출력한다 
+//browser = window
+
+//그냥 이렇게 써두면 해당 문서가 로딩될때 한번
+//실행되고 끝이납니다.
+//스크롤이 실행 될때마다, 혹은 클릭 될때마다 등
+//어떠한 조건을 만족했을때 해당 구문들이 실행되길 원한다면
+// > 이벤트를 만들어서 이벤트 내부에 지정 
+let scr = $(window).scrollTop();
+$('.count').text(scr);
+
+
+
+$(window).on('scroll',function(){
+
+    let scr2 = $(window).scrollTop();
+    $('.count').text(scr2);
+    
+    if(scr2 >= 3000){
+        $('body').css({'backgroundColor':'lavender'});
+    }
+    
+    if(scr2 >= 5000){
+        $('body').css({'backgroundColor':'violet'});
+    }
+
+    if(scr2 >= 8000){
+        $('body').css({'backgroundColor' : 'dodgerblue'})
+    }
+
+/*
+만약 이 scr2가 3000을 넘어가면 body의 백그라운드 색 lavender
+만약 이 scr2가 5000을 넘어가면 body의 백그라운드 색 violet
+만약 이 scr2가 8000을 넘어가면 body의 백그라운드 색 dodgerblue
+*/
+});
+
+
+
+
+    //.count를 누르면 맨 위로 가기 
+
+
+
+//스크롤이동을 애니메이트로 하기 
+
+    $('.count').click(function(){
+        //스크롤을 애니메이션으로 제어할때는 반드시
+        //대상이 html,body가 된다
+
+        $('html,body').animate({'scrollTop':0},1000);
+
+    });
+
+
+
+</script>
+    
+</body>
+</html>

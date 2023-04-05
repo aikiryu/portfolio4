@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script>
+//연산자! 
+//1. 기본오칙연산 +, -, *, /, %
+let a = 123;
+let b = 300;
+let c = "123"; //string 
+
+document.write(a + b);
+document.write('<hr>');
+//html태그 넣어주면 들어감....
+document.write(a + c); //문자
+document.write("학교종이" + "땡땡땡"); 
+document.write("진달래" + true);
+
+document.write("<h1>"+ a +"</h1>");
+/*
+ + 
+ 숫자끼리 더하면 숫자가 나온다.
+ 문자 + 다른데이터랑 더하면 그냥 통째로 결합된
+ 문자가 나옵니다. 
+
+ "123" + 123 = "123123"
+
+*/
+
+//document.write(typeof(a + c));
+
+         //b> 300 / a> 123
+         // c> "문자 123"
+document.write(b - a);
+document.write(b - c);
+//뺄셈은 그냥 빼면 된다...
+//문자를 -로 줄 경우 자동으로 숫자로 
+//치환되서 연산됩니다. 
+
+document.write('학교종이' - '땡땡땡');
+/*
+NaN Not a Number 숫자가 아님....
+연산을 했는데 말이 안되는 것을 연산했을때
+나오는 키워드 
+*/
+
+document.write('<hr>');
+
+document.write(a * b);
+document.write(b / a);
+
+let e = 40;
+let f = 7;
+
+// % 나머지를 구하는 연산자
+/*
+나머지란 ? 
+자연수에서 자연수를 나눌 때,
+더 이상 나눌 수 없이 남은 수를 나머지라고 부른다.
+
+*/
+document.write('<hr>');
+document.write(e % f);
+document.write(e % 3);
+
+
+
+</script>
+
+
+
+</body>
+</html>

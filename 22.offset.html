@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+        div{
+            width: 100px;
+            border: 2px solid #000;
+            box-sizing: border-box;
+        }
+
+        ul{
+            list-style: none;
+        }
+        header{
+            background-color: orange;
+        }
+
+        .wrap{
+            width: 800px;
+            border: none;
+            margin:0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h1{
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        .gnb{
+            display: flex;
+        }
+        .gnb li{
+            margin-left: 40px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .bar{
+            height: 4px;
+            display: none;
+            width: 40px;
+            background-color: orangered;
+            position: absolute;
+            top: 48px;
+            left: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="wrap">
+            <h1>Logo</h1>
+            <ul class="gnb">
+                <li>red</li>
+                <li>orangered</li>
+                <li>orange</li>
+                <li>gold</li>
+                <li>yellow</li>
+                <li>yellowgreen</li>
+            </ul><!--gnb-->
+      </div>
+        <span class="bar"></span>
+    </header>
+
+
+<div class="box1">1</div>
+<div class="box2">2</div>
+<div class="box3">3</div>
+<div class="box4">4</div>
+<div class="box5">5</div>
+<div class="box6">6</div>
+
+<script src="js/jquery-3.6.4.min.js"></script>
+<script>
+
+$('.box1').height(300);
+$('.box2').height(600);
+$('.box3').height(120);
+$('.box4').height(200);
+$('.box5').height(450);
+$('.box6').height(800);
+
+$('div').click(function(){
+
+    /*
+    offset() 은 항상 두개의 값을 구합니다
+    offset이란 해당 웹문서의 왼쪽 최상단에서부터
+    해당 요소까지의 "거리"를 의미합니다. 
+
+    offset()은 항상 top/left 두가지를 동시에 구하며,
+    그 중 하나의 값만 필요할 때는 
+    .top
+    .left
+    를 붙여서 값을 빼옵니다.
+    */
+    let ofs = $(this).offset().top;
+    console.log(ofs);
+
+
+});
+
+/*
+.box1의 높이값 > 300
+.box2의 높이값 > 600
+.box3의 높이값 > 120
+.box4의 높이값 > 200
+.box5의 높이값 > 450
+.box6의 높이값 > 800
+
+*/
+
+
+
+/*
+ .gnb내부에서 따라다니는 언더바 만들기
+
+ 1. .gnb li에 마우스를 올리면
+ 2. .bar가 나타납니다 (fade로!)
+ 3. .bar가 그 위치까지(offset) 이동합니다 (animate-left)
+     ㄴ 내가 마우스를 올린 li의 offset left까지 이동
+ 4. .bar의 너비가 해당 li의 너비만큼으로 커집니다 (animate)
+     ㄴ 내가 마우스를 올린 li의 너비를 구하고,
+     ㄴ 그 너비를 .bar에게 주기
+*/
+
+$('.gnb li').mouseover(function(){
+
+    $('.bar').show();
+    
+    let locate = $(this).offset().left;
+    let wid = $(this).width();
+
+    $('.bar').stop().animate({
+        'left':locate,
+        'width':wid
+    });
+
+})
+
+$('.gnb').mouseout(function(){
+    $('.bar').stop().fadeOut();
+})
+
+
+
+</script>
+    
+</body>
+</html>

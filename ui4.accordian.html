@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;}
+        
+        .wrap{
+            width: 800px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin:100px auto;
+            background-color: #eee;
+        }
+
+        .wrap .section{}
+        .wrap .section h4{
+            background-color: #fff;
+            padding: 8px;
+            border-radius: 2px;
+            position: relative;
+            z-index: 3;
+        }
+        .wrap .section div{
+            padding: 12px;
+            background-color: lavender;
+            padding-bottom: 30px;
+            font-size: 14px;
+            color: #444;
+            display: none;
+        }
+
+        .wrap .section:nth-child(1) div{
+            display: block;
+        }
+
+        .wrap .section h4.active{
+            background-color: #b1b1ff;
+            color: #fff;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="wrap">
+        <div class="section">
+            <h4 class="active">list 1</h4>
+            <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia consequuntur inventore illum quasi facere doloribus tenetur molestias non sit temporibus? Quisquam, ipsa. Vero nobis quisquam deserunt reprehenderit. Voluptatibus, ipsam itaque?
+                Delectus et magni quos! Debitis natus harum optio asperiores voluptate, minima placeat eum illum repellat velit in ea incidunt facere doloremque molestiae, id rerum cum minus reprehenderit? Laudantium, quos cumque?
+            </div>
+        </div><!--section-->
+
+        <div class="section">
+            <h4>list 2</h4>
+            <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia consequuntur inventore illum quasi facere doloribus tenetur molestias non sit temporibus? Quisquam, ipsa. Vero nobis quisquam deserunt reprehenderit. Voluptatibus, ipsam itaque?
+                Delectus et magni quos! Debitis natus harum optio asperiores voluptate, minima placeat eum illum repellat velit in ea incidunt facere doloremque molestiae, id rerum cum minus reprehenderit? Laudantium, quos cumque?
+            </div>
+        </div><!--section-->
+
+        <div class="section">
+            <h4>list 3</h4>
+            <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia consequuntur inventore illum quasi facere doloribus tenetur molestias non sit temporibus? Quisquam, ipsa. Vero nobis quisquam deserunt reprehenderit. Voluptatibus, ipsam itaque?
+                Delectus et magni quos! Debitis natus harum optio asperiores voluptate, minima placeat eum illum repellat velit in ea incidunt facere doloremque molestiae, id rerum cum minus reprehenderit? Laudantium, quos cumque?
+            </div>
+        </div><!--section-->
+
+        <div class="section">
+            <h4>list 4</h4>
+            <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia consequuntur inventore illum quasi facere doloribus tenetur molestias non sit temporibus? Quisquam, ipsa. Vero nobis quisquam deserunt reprehenderit. Voluptatibus, ipsam itaque?
+                Delectus et magni quos! Debitis natus harum optio asperiores voluptate, minima placeat eum illum repellat velit in ea incidunt facere doloremque molestiae, id rerum cum minus reprehenderit? Laudantium, quos cumque?
+            </div>
+        </div><!--section-->    
+        
+        <div class="section">
+            <h4>list 5</h4>
+            <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia consequuntur inventore illum quasi facere doloribus tenetur molestias non sit temporibus? Quisquam, ipsa. Vero nobis quisquam deserunt reprehenderit. Voluptatibus, ipsam itaque?
+                Delectus et magni quos! Debitis natus harum optio asperiores voluptate, minima placeat eum illum repellat velit in ea incidunt facere doloremque molestiae, id rerum cum minus reprehenderit? Laudantium, quos cumque?
+            </div>
+        </div><!--section-->      
+
+        <div class="section">
+            <h4>list 6</h4>
+            <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia consequuntur inventore illum quasi facere doloribus tenetur molestias non sit temporibus? Quisquam, ipsa. Vero nobis quisquam deserunt reprehenderit. Voluptatibus, ipsam itaque?
+                Delectus et magni quos! Debitis natus harum optio asperiores voluptate, minima placeat eum illum repellat velit in ea incidunt facere doloremque molestiae, id rerum cum minus reprehenderit? Laudantium, quos cumque?
+            </div>
+        </div><!--section-->       
+    </div><!--wrap-->
+
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script>
+    /*
+    h4를 클릭했을 때 
+    > 일단 그 h4와 나란히 붙어있는 div는 slideDown();
+    > 그것 외의 다른 div들은 slideUp() 이 됩니다
+    > 클릭한 해당 h4는 'active' 클래스를 가지고,
+    > 나머지 h4들은 active 클래스를 뗍니다
+    */ 
+
+/*
+
+ 선택한 것에 "하이라이트"가 들어오는 것을
+ "활성화"시킨다 라고 얘기합니다. 
+
+jQuary의 토글기능 
+단순히 뗐다 붙였다, 껐다 켰다 가 아니라 
+대상이 on인지 off인지를 먼저 체크한 다음에,
+가지고 있는 값의 반대에 해당하는 값을 부여함
+
+*/
+
+    $('h4').click(function(){
+        
+        $(this).siblings('div').slideToggle()
+        .parent().siblings().children('div')
+        .slideUp();
+        
+        $(this).toggleClass('active').parent()
+        .siblings().children('h4')
+        .removeClass('active');
+
+    });
+
+
+
+    </script>
+</body>
+</html>

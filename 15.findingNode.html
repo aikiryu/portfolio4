@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 10px;
+            padding: 10px;
+            border:1px solid #ccc;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: normal;
+        }
+    body{
+        background-color: #eee;
+    }
+
+    span{
+        display: inline-block;
+    }
+
+    .apple{
+        background-color: red;
+        color: #fff;
+    }
+
+    .test{
+        background-color: lavender;
+    }
+
+    .check{
+        background-color: turquoise;
+    }
+        
+    h3{
+        background-color: palegoldenrod;
+    }
+
+    </style>
+</head>
+ html
+<body>
+ body
+  <div class="wrap">
+   div,.wrap
+     <header>
+        header
+         <h1>h1</h1>
+         <ul class="gnb">
+            ul,.gnb
+            <li>li1</li>
+            <li>li2</li>
+            <li>li3</li>
+            <li class="apple">li4, .apple</li>
+            <li>li5</li>
+            <li>li6</li>
+         </ul><!--gnb-->
+
+         <ul class="util">
+            ul,.util
+            <li>li1</li>
+            <li>li2</li>
+            <li class="select">li3,.select</li>
+            <li>li4</li>
+         </ul><!--util-->
+     </header>
+
+     <div class="con">
+        div,.con
+        <section class="s1">
+            section,.s1
+            <div class="space">
+                div,.space
+                <div class="box">
+                    div,.box
+                    <div class="pic">
+                        div,.pic
+                    </div><!--pic-->
+                    <div class="txt">
+                        div,.txt
+                    </div><!--txt-->
+                </div><!--box-->
+                <div class="box">
+                    div,.box
+                    <div class="pic">
+                        div,.pic
+                    </div><!--pic-->
+                    <div class="txt">
+                        div,.txt
+                    </div><!--txt-->
+                </div><!--box-->
+                <div class="box">
+                    div,.box
+                    <div class="pic">
+                        div,.pic
+                    </div><!--pic-->
+                    <div class="txt">
+                        div,.txt
+                    </div><!--txt-->
+                </div><!--box-->                                
+            </div><!--space-->
+
+            <div class="content">
+                div,.content
+                <h3>h3</h3>
+                <div class="cover">
+                    div,.cover
+                    <div class="item">
+                        div,.item
+                        <p>p</p>
+                        <p>p</p>
+                        <p>p</p>
+                        <p>p</p>
+                    </div><!--item-->
+
+                    <div class="item">
+                        div,.item
+                        <p>p</p>
+                        <p>p</p>
+                        <p>p</p>
+                        <p>p</p>
+                    </div><!--item-->
+
+                    <div class="item">
+                        div,.item
+                        <p>p</p>
+                        <p class="test">p,.test</p>
+                        <p>p</p>
+                        <p>p</p>
+                    </div><!--item-->
+                    
+                    <div class="item">
+                        div,.item
+                        <p>p</p>
+                        <p>p</p>
+                        <p>p</p>
+                        <p>p</p>
+                    </div><!--item-->                    
+                </div><!--cover-->
+            </div><!--content-->
+        </section><!--s1-->
+
+
+        <section class="s2">
+            <h3>h3</h3>
+
+            <div class="notice">
+                div,.notice
+                <ul>
+                  ul
+                  <li>li
+                    <span>span</span>
+                    <span>span</span>
+                  </li>
+
+                  <li>li
+                    <span>span</span>
+                    <span>span</span>
+                  </li>
+
+                  <li>li
+                    <span>span</span>
+                    <span>span</span>
+                  </li>
+
+                  <li>li
+                    <span>span</span>
+                    <span>span</span>
+                  </li>
+
+                  <li>li
+                    <span>span</span>
+                    <span>span</span>
+                  </li>
+
+                </ul>
+            </div><!--notice-->
+
+        </section><!--s2-->
+
+     </div><!--con-->
+
+     <footer>
+        <h1>h1</h1>
+        <ul class="fMenu">
+            ul,.fMenu
+            <li>li</li>
+            <li>li</li>
+            <li class="check">li</li>
+            <li>li</li>
+            <li>li</li>
+        </ul> <!--fMenu-->
+
+        <ul class="fInfo">
+            <li>li</li>
+            <li>li</li>
+            <li>li</li>
+            <li>li</li>
+            <li>li</li>
+            <li>li</li>
+        </ul><!--fInfo-->
+
+     </footer>
+
+  </div><!--wrap-->
+
+
+<script src="js/jquery-3.6.4.min.js"></script>
+<script>
+//노드찾기 -- ~의 자식찾기,형제, 부모찾기
+
+// 1. 자식찾기
+/*
+.find()
+선택자 내부에 있는 모든 해당하는 것들 선택하기
+
+.children()
+선택자의 바로 아래있는 자식 중 해당하는 것들
+선택하기 
+
+.children(선택자)
+  ㄴ 해당 선택자와 맞는 자식만 선택
+.children()
+  ㄴ 태그명이나 클래스와 관계없이 모든 
+     자식 선택
+
+1. .s1 내부의 모든 div들 선 색상 까만색으로 바꾸기
+2. .fMenu 내부의 li들 글자색상 blue로 바꾸기
+
+*/
+
+
+$('.space').find('div').css({
+    'borderColor' : 'forestgreen'
+})
+
+$('.space').children('div').css({
+    'borderColor': 'blue'
+});
+
+$('.gnb').children().css({
+    'textDecoration' : 'underline'
+});
+
+$('.s1').find('div').css({
+    'borderColor' : 'black'
+});
+
+$('.fMenu').children().css({
+    'color' : 'blue'
+});
+
+/*
+2.순서로 찾기 
+~번째 
+ 
+first()
+last()
+
+
+eq()☣☣☣☣☣☣☣☣☣☣☣
+*/
+
+$('.util').children().first()
+.css({
+    'backgroundColor' : 'lawngreen'
+});
+
+$('.util li').last().css({
+    'backgroundColor' : 'tomato'
+});
+
+
+$('.notice ul').children('li').first().
+children('span').last()
+.css({'backgroundColor' : 'pink'});
+
+
+</script>
+
+</body>
+</html>
